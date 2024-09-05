@@ -82,6 +82,44 @@ cm(
 // Result => 'c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 c11 c12'
 ```
 
+### Sorting Tailwind Classes
+
+[prettier-plugin-tailwindcss | Sorting classes in function calls](https://github.com/tailwindlabs/prettier-plugin-tailwindcss?tab=readme-ov-file#sorting-classes-in-function-calls)
+
+#### Example
+
+```json
+// .prettierrc
+{
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "tailwindFunctions": ["cm"]
+}
+```
+
+Now, any classes in `cm()` function calls will be sorted:
+
+<!-- prettier-ignore-->
+```jsx
+import cm from '@m00nbyte/classmix';
+
+function Page() {
+    let classes = cm(
+        'bg-stone-900 px-4 py-2 text-base text-white',
+        {
+            'bg-white text-stone-900': isLightMode
+        }
+    );
+
+    return (
+        <div className={classes}>
+            {children}
+        </button>
+    );
+}
+
+export default Page;
+```
+
 ## Contribution
 
 Feel free to submit issues or pull requests.
